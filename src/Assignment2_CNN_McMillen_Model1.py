@@ -1,3 +1,5 @@
+# Add Batch Normalization before ReLU
+
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
