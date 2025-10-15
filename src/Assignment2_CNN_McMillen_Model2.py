@@ -7,6 +7,8 @@ from torchvision import datasets, transforms
 from sklearn.metrics import accuracy_score
 import time
 
+print("Dropout is: 0.3")
+
 # CNN Model
 class CNN(nn.Module):
     def __init__(self):
@@ -15,7 +17,7 @@ class CNN(nn.Module):
         self.relu  = nn.ReLU()
         self.pool  = nn.MaxPool2d(2, 2)                           		# -> 16x16x16
         self.conv2 = nn.Conv2d(16, 32, kernel_size=3, padding=1)  	# -> 32x16x16
-        self.dropout = nn.Dropout(p=0.5)
+        self.dropout = nn.Dropout(p=0.3)
         self.fc1   = nn.Linear(32 * 8 * 8, 10)                    		# after 2nd pool: 32x8x8
 
     def forward(self, x):
